@@ -59,14 +59,14 @@ int main(int argc, char* argv[]){
     password = generatePassword(NUM_DIGITS);
     std::cout << password << std::endl;
 
-    std::ifstream infile; infile.open("/Users/tate-minch/Documents/misc/Passwords/passwordGenerator/Passwords.txt");
+    std::ifstream infile; infile.open("<YOUR PASSWORD FILE HERE>");
     while (getline(infile, line)){
         if(line.find(platform) == std::string::npos)
             newFile.push_back(line);
     }
     infile.close();
 
-    std::ofstream outfile; outfile.open("/Users/tate-minch/Documents/misc/Passwords/passwordGenerator/Passwords.txt", std::ios::trunc);
+    std::ofstream outfile; outfile.open("<YOUR PASSWORD FILE HERE>", std::ios::trunc);
     outfile << platform + " - " << password << std::endl;
     for(int i = 0; i < newFile.size();i++){
         outfile << newFile[i] + "\n";
